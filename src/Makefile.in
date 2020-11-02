@@ -17,7 +17,7 @@ RM = rm -f
 
 CFLAGS	= -Wall -Werror @CFLAGS@ \
 	-DDEFAULT_CONFIGFILE="\"@sg_config@\"" \
-	-DEFAULT_LOGDIR="\"@sg_logdir@\"" \
+	-DDEFAULT_LOGDIR="\"@sg_logdir@\"" \
 	-DDEFAULT_DBHOME="\"@sg_dbhome@\"" \
 	-Wall 
 
