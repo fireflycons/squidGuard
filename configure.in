@@ -425,6 +425,7 @@ AC_STRUCT_TM
 
 dnl Checks for library functions.
 
+AC_CHECK_FUNCS(innetgr, , AC_MSG_WARN([No NIS netgroup support.]))
 AC_CHECK_FUNCS(regcomp, , AC_MSG_ERROR([No regcomp library function.]))
 AC_CHECK_FUNCS(regerror, , AC_MSG_ERROR([No regerror library function.]))
 AC_CHECK_FUNCS(regexec, , AC_MSG_ERROR([No regexec library function.]))

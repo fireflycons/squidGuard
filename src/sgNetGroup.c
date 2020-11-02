@@ -40,11 +40,12 @@ static void freeNetgroupMatch(void *o)
 
 static int netgroupUserMatch(void *priv, const struct SquidInfo *info)
 {
+#ifdef HAVE_INNETGR
 	if (innetgr((char *)priv, NULL, info->ident, NULL)) {
 		sgLogDebug("user '%s' is in netgroup %s", info->ident, priv);
 		return 1;
 	}
-
+#endif
 	return 0;
 }
 
@@ -64,11 +65,12 @@ struct SourceMatch *newNetgroupUserMatch(const char *netgroup)
 
 static int netgroupHostMatch(void *priv, const struct SquidInfo *info)
 {
+#ifdef HAVE_INNETGR
 	if (innetgr((char *)priv, NULL, info->domain, NULL)) {
 		sgLogDebug("host '%s' is in netgroup %s", info->domain, priv);
 		return 1;
 	}
-
+#endif
 	return 0;
 }
 
