@@ -467,8 +467,10 @@ void updateProgressBar(float prog)
 		}
 		printf("] %d %% done", (int)(prog * 100.0)); fflush(stderr);
 	} else {
-		if (((int)(prog * 100.0) % 100) == 0)
-			printf("."); fflush(stderr);
+		if (((int)(prog * 100.0) % 100) == 0) {
+			printf(".");
+			fflush(stderr);
+		}
 	}
 
 	return;
